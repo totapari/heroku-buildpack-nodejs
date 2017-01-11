@@ -131,10 +131,10 @@ restore_cache() {
 
 header "Restoring cache"
 restore_cache | output "$LOG_FILE"
-
+install_oracle_libraries "$BUILD_DIR/.heroku"
 
 build_dependencies() {
-install_oracle_libraries "$BUILD_DIR/.heroku"
+
   run_if_present 'heroku-prebuild'
   if $YARN; then
     yarn_node_modules "$BUILD_DIR"
