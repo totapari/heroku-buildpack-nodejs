@@ -62,6 +62,7 @@ warn_missing_package_json "$BUILD_DIR"
 ### Compile
 
 create_env() {
+  add_oracle_env "$BUILD_DIR/.heroku"
   write_profile "$BP_DIR" "$BUILD_DIR"
   write_export "$BP_DIR" "$BUILD_DIR"
   export_env_dir "$ENV_DIR"
@@ -130,6 +131,7 @@ restore_cache() {
 
 header "Restoring cache"
 restore_cache | output "$LOG_FILE"
+install_oracle_libraries "$BUILD_DIR/.heroku"
 
 build_dependencies() {
   run_if_present 'heroku-prebuild'
