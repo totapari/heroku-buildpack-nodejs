@@ -4,15 +4,12 @@ install_oracle_libraries(){
   echo "Installing oracle libraries"
   mkdir -p $build_dir/oracle
   cd $build_dir/oracle
-  local basic_download_url="http://nodeuat.flyin.com/instantclient-basic-linux.x64-12.1.0.2.0.zip"
-  local sdk_download_url="http://nodeuat.flyin.com/instantclient-sdk-linux.x64-12.1.0.2.0.zip"
-  curl -k "$basic_download_url" --silent --fail --retry 5 --retry-max-time 15 -o instantclient-basic.zip
-  echo "Downloaded [$basic_download_url]"
-  curl -k "$sdk_download_url" --silent --fail --retry 5 --retry-max-time 15 -o instantclient-sdk.zip
-  echo "Downloaded [$sdk_download_url]"
-  echo "unzipping libraries"
-  unzip instantclient-basic.zip
-  unzip instantclient-sdk.zip
+  wget http://nodeuat.flyin.com/instantclient-sdk-linux.x64-12.1.0.2.0.zip
+  wget http://nodeuat.flyin.com/instantclient-basic-linux.x64-12.1.0.2.0.zip
+  echo "Downloaded the zip files"
+echo "unzipping libraries"
+unzip instantclient-basic-linux.x64-12.1.0.2.0.zip
+unzip instantclient-sdk-linux.x64-12.1.0.2.0.zip
   mv instantclient_12_1 instantclient
   cd instantclient
   ln -s libclntsh.so.12.1 libclntsh.so
