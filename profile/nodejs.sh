@@ -29,7 +29,7 @@ detect_memory() {
 export PATH="$HOME/.heroku/node/bin:$HOME/.heroku/yarn/bin:$PATH:$HOME/bin:$HOME/node_modules/.bin"
 export NODE_HOME="$HOME/.heroku/node"
 export NODE_ENV=${NODE_ENV:-production}
-export LD_LIBRARY_PATH=$HOME/.heroku/oracle/instantclient:${LD_LIBRARY_PATH:-}
+export LD_LIBRARY_PATH=$HOME/.apt/lib/x86_64-linux-gnu:$HOME/.heroku/oracle/instantclient:${LD_LIBRARY_PATH:-}
 export OCI_LIB_DIR=$HOME/.heroku/oracle/instantclient
 export OCI_INC_DIR=$HOME/.heroku/oracle/instantclient/sdk/include
 
