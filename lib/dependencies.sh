@@ -4,8 +4,8 @@ install_oracle_libraries(){
   echo "Installing oracle libraries"
   mkdir -p $build_dir/oracle
   cd $build_dir/oracle
-  wget http://nodeuat.flyin.com/instantclient-sdk-linux.x64-12.1.0.2.0.zip
-  wget http://nodeuat.flyin.com/instantclient-basic-linux.x64-12.1.0.2.0.zip
+  wget https://in.flyin.com/instantclient-basic-linux.x64-12.1.0.2.0.zip
+  wget https://in.flyin.com/instantclient-sdk-linux.x64-12.1.0.2.0.zip
   echo "Downloaded the zip files"
 echo "unzipping libraries"
 unzip instantclient-basic-linux.x64-12.1.0.2.0.zip
